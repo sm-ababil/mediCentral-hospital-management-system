@@ -1,0 +1,110 @@
+.form-container {
+  width: 400px;
+  min-height: fit-content;
+  margin: 20px auto;
+  padding: 30px 40px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+/* Add styles for the page background */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+  padding-top: 84px;
+}
+
+/* Style the heading */
+h2 {
+  color: #333;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Style the form buttons */
+.ant-btn-primary {
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  background: #4caf50; /* Green background */
+  border: none;
+  border-radius: 20px; /* Rounded corners for tablet-like appearance */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.ant-btn-primary:hover {
+  background: #45a049; /* Darker green on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.ant-btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Add these new styles */
+.ant-select {
+  width: 100% !important;
+}
+
+.ant-select-selector {
+  width: 100% !important;
+  min-width: 120px !important;
+}
+
+.ant-input,
+.ant-select-selector,
+.ant-input-password {
+  height: 45px !important;
+  padding: 8px 15px !important;
+  font-size: 15px !important;
+  border: 1px solid #d9d9d9 !important;
+  border-radius: 6px !important;
+  background-color: #fff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.ant-input::placeholder {
+  color: #666 !important;
+  font-size: 15px;
+}
+
+.ant-select-selection-placeholder {
+  color: #666 !important;
+  font-size: 15px !important;
+  line-height: 30px !important;
+}
+
+.ant-input-password .ant-input {
+  height: 100% !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Hover state */
+.ant-input:hover,
+.ant-select-selector:hover,
+.ant-input-password:hover {
+  border-color: #4CAF50 !important;
+}
+
+/* Focus state */
+.ant-input:focus,
+.ant-select-selector:focus,
+.ant-input-password:focus {
+  border-color: #4CAF50 !important;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2) !important;
+}

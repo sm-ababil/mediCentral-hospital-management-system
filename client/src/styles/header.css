@@ -1,0 +1,65 @@
+/* Import the Hammersmith One font */
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  height: 64px;
+  background-color: #4CAF50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-family: 'Hammersmith One', sans-serif;
+  letter-spacing: 1px;
+}
+
+.logo-image {
+  height: 70px;  /* Adjust this value based on your logo size */
+  width: auto;
+  margin-right: 0px;  /* Space between logo and text */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #e0e0e0;
+}
+
+.nav-links button {
+  background: white;
+  border: none;
+  height: 36px;
+  padding: 0 20px;
+  border-radius: 18px;
+  color: #4CAF50;
+}
+
+.nav-links button:hover {
+  background: #e0e0e0;
+  color: #45a049;
+} 
