@@ -1,42 +1,33 @@
 import React from "react";
 import Header from "../components/Header";
 import homepageImage from "../assets/homepage-image.png";
+import "../styles/homepage.css";
 
 const HomePage = () => {
   return (
     <>
       <Header />
-      <div
-        style={{
-          display: "flex",
-          minHeight: "calc(100vh - 64px)", // Subtract header height
-          padding: "20px",
-        }}
-      >
-        <div
-          style={{
-            flex: "1",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <img
-            src={homepageImage}
-            alt="Homepage illustration"
-            style={{
-              maxWidth: "80%",
-              height: "auto",
-              objectFit: "contain",
-            }}
-          />
-        </div>
-        <div
-          style={{
-            flex: "1",
-          }}
-        >
-          {/* Right side content can go here */}
+      <div className="homepage-container">
+        <img 
+          src={homepageImage} 
+          alt="Homepage illustration" 
+          className="homepage-image left-aligned"
+        />
+        <div className="content-right">
+          <h1 className="brand-name">MediCentral</h1>
+          <div className="divider"></div>
+          <div className="welcome-section">
+            <p className="welcome-subtext">
+              Experience seamless healthcare management with MediCentral. 
+              Schedule appointments, access medical records, and connect with 
+              healthcare professionals all in one place.
+            </p>
+          </div>
+          <div className="divider"></div>
+          <div className="button-group">
+            <button className="primary-button">Register</button>
+            <button className="secondary-button">Explore</button>
+          </div>
         </div>
       </div>
     </>

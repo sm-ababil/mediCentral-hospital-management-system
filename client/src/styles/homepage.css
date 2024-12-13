@@ -1,0 +1,163 @@
+.homepage-container {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+}
+
+.image-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage-image {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+.content-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.title-underline {
+  width: 60%;
+  height: 3px;
+  background-color: #808080;
+  margin-bottom: 20px;
+}
+
+.introduction {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.intro-underline {
+  width: 40%;
+  height: 2px;
+  background-color: #808080;
+  margin-bottom: 30px;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+}
+
+.button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.register-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.register-btn:hover {
+  background-color: #0056b3;
+}
+
+.explore-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+.explore-btn:hover {
+  background-color: #545b62;
+}
+
+.homepage-image.left-aligned {
+  max-width: 50%;
+  margin-left: 2rem;
+}
+
+.content-right {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 2rem;
+}
+
+.brand-name {
+  font-size: 3.5rem;
+  font-family: 'Hammersmith One', sans-serif;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  height: 1px;
+  background-color: #ccc;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.welcome-message {
+  font-size: 1.8rem;
+  color: #555;
+  margin: 1rem 0;
+}
+
+.button-group {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.primary-button, .secondary-button {
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  min-width: 130px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.primary-button {
+  background-color: #4CAF50;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 168, 132, 0.25);
+}
+
+.primary-button:hover {
+  background-color: #00A884;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 168, 132, 0.3);
+}
+
+.secondary-button {
+  background-color: white;
+  color: #00A884;
+  border: 2px solid #00A884;
+}
+
+.secondary-button:hover {
+  background-color: #f0fffc;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 168, 132, 0.15);
+}
