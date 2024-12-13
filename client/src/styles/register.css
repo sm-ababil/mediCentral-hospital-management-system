@@ -9,7 +9,7 @@
   backdrop-filter: blur(10px);
 }
 
-/* Add styles for the page background */
+
 body {
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -21,7 +21,7 @@ body {
   padding-top: 84px;
 }
 
-/* Style the heading */
+
 h2 {
   color: #333;
   font-size: 28px;
@@ -31,20 +31,20 @@ h2 {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Optional: Style the form buttons */
+
 .ant-btn-primary {
   width: 100%;
   height: 40px;
   font-size: 16px;
-  background: #4caf50; /* Green background */
+  background: #4caf50; 
   border: none;
-  border-radius: 20px; /* Rounded corners for tablet-like appearance */
+  border-radius: 20px; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
 .ant-btn-primary:hover {
-  background: #45a049; /* Darker green on hover */
+  background: #45a049; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: translateY(-1px);
 }
@@ -54,7 +54,7 @@ h2 {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Add these new styles */
+
 .ant-select {
   width: 100% !important;
 }
@@ -94,17 +94,36 @@ h2 {
   box-shadow: none !important;
 }
 
-/* Hover state */
+
 .ant-input:hover,
 .ant-select-selector:hover,
 .ant-input-password:hover {
-  border-color: #4CAF50 !important;
+  border-color: #4caf50 !important;
 }
 
-/* Remove or modify these styles */
+
 .ant-input:focus,
 .ant-select-selector:focus,
 .ant-input-password:focus {
-  border-color: #d9d9d9 !important; /* Keep the same border color as default */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important; /* Keep the same shadow as default */
+  border-color: #d9d9d9 !important; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important; 
+}
+
+
+.ant-input,
+.ant-input-password,
+.ant-select-selector {
+  background-color: white !important;
+}
+
+.ant-input:focus,
+.ant-input-focused,
+.ant-select-focused .ant-select-selector,
+.ant-input-password-focused {
+  background-color: white !important;
+}
+
+.ant-input-affix-wrapper-focused,
+.ant-input-affix-wrapper:focus {
+  background-color: white !important;
 }

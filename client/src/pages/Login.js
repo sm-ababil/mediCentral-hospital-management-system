@@ -3,6 +3,7 @@ import { Form, Input, Select, Button, Row, Col } from "antd";
 import { Link } from "react-router-dom";
 import Header from '../components/Header';
 import "../styles/register.css";
+
 const Login = () => {
   const onFinish = (values) => {
     console.log('Success:', values);
@@ -50,6 +51,9 @@ const Login = () => {
             <Button type="primary" htmlType="submit">
               Log in
             </Button>
+            <div style={{ textAlign: "center", marginTop: "10px" }}>
+              Not a member? <Link to="/register">Register</Link>
+            </div>
           </Form.Item>
         </Form>
       </div>
