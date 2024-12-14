@@ -1,12 +1,26 @@
 import React from 'react';
-import { Form, Input, Select, Button, Row, Col } from "antd";
-import { Link } from "react-router-dom";
+import { Form, Input, Select, Button, Row, Col, message } from "antd";
+import { Link, useNavigate } from "react-router-dom";
 import Header from '../components/Header';
 import "../styles/register.css";
+import axios from "axios";
 
 const Login = () => {
-  const onFinish = (values) => {
-    console.log('Success:', values);
+  const navigate = useNavigate();
+  const onFinish = async(values) => {
+    try {
+      const res = await axios.post("/api/v1/user/login", values);
+      if (res.data.success) {
+        localStorage.setItem("token", res.data.token);
+        message.success("Successfully Logged In");
+        navigate("/dashboard");
+      } else {
+        message.error(res.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      message.error(`Something went wrong`)
+    }
   };
 
   return (
