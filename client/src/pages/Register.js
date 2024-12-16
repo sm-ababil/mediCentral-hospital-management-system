@@ -1,5 +1,7 @@
 import React from "react";
 import { Form, Input, Select, Button, Row, Col, message } from "antd";
+import { useDispatch } from 'react-redux';
+import { showLoading, hideLoading } from '../redux/features/alertSlice';
 import { Link, useNavigate } from "react-router-dom";
 import Header from '../components/Header';
 import axios from 'axios';
@@ -7,8 +9,10 @@ import "../styles/register.css";
 
 const Register = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const onFinish = async (values) => {
     try {
+      dispatch(showLoading());
       const res = await axios.post('/api/v1/user/register', values);
       if(res.data.success){
         message.success('Register Successfully');
@@ -17,8 +21,9 @@ const Register = () => {
         message.error(res.data.message);
       };
     } catch (error) {
+      dispatch(hideLoading());
       console.log(error);
-    message.error(`Sonething went wrong !`);
+      message.error(`Sonething went wrong !`);
 
     };
   };

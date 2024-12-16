@@ -29,7 +29,7 @@ const registerController = async (req, res) => {
             message: `  Register Controller ${error.message}`,
         });
     }
-}
+};
 
 
 
@@ -49,7 +49,7 @@ const loginController = async (req, res) => {
                 message: "Invalid Email or Password",
             });
         };
-        const token = jwt.sign({id: user.__id}, process.env.JWT_SECRET, {expiresIn: "2d"});
+        const token = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: "2d"});
         res.status(200).send({
             success: true,
             message: "Login Successfully",
@@ -62,6 +62,30 @@ const loginController = async (req, res) => {
             message: `Login Controller ${error.message}`,
         });
     }
-}
+};
 
-module.exports = {loginController, registerController};
+
+const authUserController = async (req, res) => {
+    try {
+        const user = await userModel.findOne({_id: req.body.userId});
+        if(!user){
+            return res.status(200).send({
+                success: false,
+                message: "User not found",
+            });
+        } else
+        res.status(200).send({
+            success: true,
+            message: "User fetched successfully",
+            data: user,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: `Auth User Controller ${error.message}`,
+        });
+    }
+};
+
+module.exports = {loginController, registerController, authUserController};
