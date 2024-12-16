@@ -2,8 +2,10 @@ import React from "react";
 import Header from "../components/Header";
 import homepageImage from "../assets/homepage-image.png";
 import "../styles/homepage.css";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Header />
@@ -25,8 +27,8 @@ const HomePage = () => {
           </div>
           <div className="divider"></div>
           <div className="button-group">
-            <button className="primary-button">Register</button>
-            <button className="secondary-button">Explore</button>
+            <button className="primary-button" onClick={() => navigate('/register')}>Register</button>
+            <button className="secondary-button" onClick={() => navigate('/departments')}>Explore</button>
           </div>
         </div>
       </div>
