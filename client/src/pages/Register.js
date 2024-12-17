@@ -17,8 +17,10 @@ const Register = () => {
       if(res.data.success){
         message.success('Register Successfully');
         navigate('/login');
+        dispatch(hideLoading());
       } else {
         message.error(res.data.message);
+        dispatch(hideLoading());
       };
     } catch (error) {
       dispatch(hideLoading());
