@@ -10,7 +10,7 @@ const uploadAvatarController = async (req, res) => {
     }
     
     try {
-    const avatarUrl = `/uploads/${req.file.filename}`;
+    const avatarUrl = `http://localhost:3000/uploads/${req.file.filename}`;
     const userId = req.body.userId;
     await useravatarModel.findOneAndUpdate(
         { userId },
@@ -20,12 +20,27 @@ const uploadAvatarController = async (req, res) => {
 
     res.send({
         success: true,
-        avatarUrl
+        avatarUrl,
+        message: "Avatar uploaded successfully",
     });
     } catch (error) {
     console.error("Error updating avatar:", error);
     res.status(500).send({ success: false, message: 'Error updating avatar' });
     }
+};
+
+
+const getAvatarController = async (req, res) => {
+    try {
+        const avatar = await useravatarModel.findOne({ userId: req.params.userId });
+        if (!avatar) {
+          return res.status(404).send({ success: false, message: 'Avatar not found' });
+        }
+        res.send({ success: true, avatarUrl: avatar.avatarUrl, avatar: avatar });
+      } catch (error) {
+        console.error("Error fetching avatar:", error);
+        res.status(500).send({ success: false, message: 'Error fetching avatar' });
+      }
 };
 
 
@@ -47,6 +62,7 @@ const registerController = async (req, res) => {
     res.status(201).send({
       success: true,
       message: "User created successfully",
+      data: newUser
     });
   } catch (error) {
     console.log(error);
@@ -80,6 +96,7 @@ const loginController = async (req, res) => {
       success: true,
       message: "Login Successfully",
       token,
+      data: user
     });
   } catch (error) {
     console.log(error);
@@ -117,5 +134,6 @@ module.exports = {
   loginController,
   registerController,
   authUserController,
-  uploadAvatarController
+  uploadAvatarController,
+  getAvatarController
 };

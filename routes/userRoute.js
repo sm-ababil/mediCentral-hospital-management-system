@@ -3,7 +3,8 @@ const {
     loginController, 
     registerController, 
     authUserController,
-    uploadAvatarController
+    uploadAvatarController,
+    getAvatarController
 } = require('../controllers/userController');
 const authentication = require('../middlewares/authentication');
 const multer = require('multer');
@@ -12,7 +13,7 @@ const router = express.Router();
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, '/uploads');
+      cb(null, 'uploads/');
     },
     filename: (req, file, cb) => {
       cb(null, Date.now() + path.extname(file.originalname));
@@ -24,6 +25,5 @@ router.post('/login', loginController);
 router.post('/register', registerController);
 router.post('/getUser', authentication, authUserController);
 router.post('/uploadAvatar', upload.single('avatar'), uploadAvatarController);
-
-
+router.post('/getAvatar/:userId', getAvatarController);
 module.exports = router;
