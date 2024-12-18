@@ -9,6 +9,8 @@ import { useSelector } from 'react-redux';
 import Spinner from './components/Spinner';
 import ProtectedRoute from './components/ProtectedRoute';
 import PublicRoute from './components/PublicRoute';
+import OtBed from './pages/OtBed';
+import AdminBed from './pages/adminbed';
 
 function App() {
   const {loading} = useSelector(state => state.alert);
@@ -23,6 +25,8 @@ function App() {
           <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path='/departments' element={<Departments />} />
           <Route path='/find-doctor' element={<FindDoctor />} />
+          <Route path='/ot-bed' element={<OtBed />} />
+          <Route path='/admin-bed' element={<AdminBed />} />
         </Routes>)
         }
       </BrowserRouter>
