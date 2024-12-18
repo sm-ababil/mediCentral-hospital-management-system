@@ -59,6 +59,15 @@ const registerController = async (req, res) => {
     req.body.password = hashedPassword;
     const newUser = new userModel(req.body);
     await newUser.save();
+    const avatarUrl = newUser.gender === "male" 
+      ? `http://localhost:3000/uploads/1734481486687.jpg` 
+      : `http://localhost:3000/uploads/1734482760992.jpg`;
+    await useravatarModel.create({
+      userId: newUser._id,
+      avatarUrl,
+      uploadedAt: new Date()
+    });
+
     res.status(201).send({
       success: true,
       message: "User created successfully",
