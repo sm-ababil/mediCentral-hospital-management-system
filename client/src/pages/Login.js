@@ -2,31 +2,34 @@ import React from 'react';
 import { Form, Input, Select, Button, Row, Col, message } from "antd";
 import { useDispatch } from 'react-redux';
 import { showLoading, hideLoading } from '../redux/features/alertSlice';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Header from '../components/Header';
 import "../styles/register.css";
 import axios from "axios";
+import { setUser } from '../redux/features/userSlice';
 
 
 const Login = () => {
+  const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const onFinish = async(values) => {
     try {
       dispatch(showLoading());
-      const res = await axios.post("/api/v1/user/login", values);
+      const response = await axios.post("/api/v1/user/login", values);
       dispatch(hideLoading());
-      if (res.data.success) {
-        localStorage.setItem("token", res.data.token);
-        message.success("Successfully Logged In");
-        navigate("/dashboard");
+      if (response.data.success) {
+        message.success(response.data.message);
+        localStorage.setItem("token", response.data.token);
+        dispatch(setUser(response.data.data));
+        navigate('/dashboard');
       } else {
-        message.error(res.data.message);
+        message.error(response.data.message);
       }
     } catch (error) {
       dispatch(hideLoading());
       console.log(error);
-      message.error(`Something went wrong`)
+      message.error("Something went wrong");
     }
   };
 
