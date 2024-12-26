@@ -13,6 +13,8 @@ import UserProfile from './pages/UserProfile';
 import DoctorProfile from './pages/DoctorProfile';
 import OtBed from './pages/OtBed';
 import AdminBed from './pages/adminbed';
+import DoctorLogin from './pages/DoctorLogin';
+import DoctorRegister from './pages/DoctorRegister';
 
 function App() {
   const {loading} = useSelector(state => state.alerts);
@@ -24,6 +26,7 @@ function App() {
           <Route path='/' element={<PublicRoute><HomePage /></PublicRoute>} />
           <Route path='/login' element={<PublicRoute><Login /></PublicRoute>} />
           <Route path='/register' element={<PublicRoute><Register /></PublicRoute>} />
+          <Route path='/doctor-register' element={<PublicRoute><DoctorRegister /></PublicRoute>} />
           <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path='/departments' element={<Departments />} />
           <Route path='/find-doctor' element={<FindDoctor />} />
@@ -31,6 +34,7 @@ function App() {
           <Route path="/doctor-profile/:id" element={<DoctorProfile />} />
           <Route path='/ot-bed' element={<OtBed />} />
           <Route path='/admin-bed' element={<AdminBed />} />
+          <Route path='/login-doctor' element={<PublicRoute><DoctorLogin /></PublicRoute>} />
         </Routes>)
         }
       </BrowserRouter>
