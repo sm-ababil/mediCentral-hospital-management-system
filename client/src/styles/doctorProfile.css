@@ -1,0 +1,590 @@
+.doctor-profile-container {
+    padding: 30px;
+    max-width: 2400px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.back-button {
+    margin-bottom: 30px;
+    font-size: 16px;
+    height: 40px;
+}
+
+.profile-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 2400px;
+    margin: 0 auto;
+}
+
+.left-side-container {
+    flex-shrink: 0;
+    width: 350px;
+}
+
+.profile-card {
+    text-align: center;
+    padding: 0;
+    width: 350px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.doctor-image-container {
+    width: 350px;
+    height: 350px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.doctor-image-container img {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    object-fit: contain;
+}
+
+.doctor-image-placeholder {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+}
+
+.doctor-basic-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.doctor-basic-info h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.doctor-basic-info .rating-text {
+    margin: 8px 0 20px;
+    color: #666;
+}
+
+.specialty {
+    color: #4CAF50;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.rating-text {
+    color: #666;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.details-card {
+    flex: 1;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    min-width: 600px;
+}
+
+.doctor-info-header {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.doctor-info-header h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.doctor-info-header .specialty {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.info-section {
+    margin-bottom: 25px;
+}
+
+.info-section h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.info-item {
+    display: flex;
+    margin-bottom: 12px;
+    gap: 15px;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-item h3 {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.info-item p {
+    color: #333;
+    font-size: 18px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.info-label {
+    min-width: 120px;
+    color: #666;
+    font-weight: 500;
+}
+
+.info-value {
+    color: #333;
+}
+
+.schedule-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #444;
+    font-size: 16px;
+}
+
+.schedule-icon {
+    color: #4CAF50;
+    font-size: 18px;
+}
+
+.appointment-section {
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.appointment-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.appointment-section p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.book-appointment-btn {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    height: 50px;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 0 40px;
+}
+
+.book-appointment-btn:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
+.doctor-not-found {
+    text-align: center;
+    padding: 50px;
+}
+
+/* Responsive design */
+@media (max-width: 2500px) {
+    .profile-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-side-container {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .details-card {
+        width: 100%;
+        min-width: 0;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .doctor-profile-container {
+        padding: 20px;
+    }
+
+    .profile-content {
+        padding: 10px;
+    }
+
+    .doctor-image-container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+
+    .doctor-basic-info h1 {
+        font-size: 28px;
+    }
+
+    .specialty {
+        font-size: 20px;
+    }
+
+    .details-card h2 {
+        font-size: 24px;
+    }
+
+    .info-section h3 {
+        font-size: 18px;
+    }
+
+    .info-section p {
+        font-size: 16px;
+    }
+
+    .profile-card {
+        max-width: 400px;
+    }
+    
+    .doctor-image-placeholder {
+        font-size: 20px;
+    }
+} 
+
+/* Add these new styles */
+.recommendation-card {
+    margin-top: 20px;
+    text-align: center;
+    padding: 25px;
+    width: 350px;
+    background: white;
+    border-radius: 12px;
+}
+
+.recommendation-percentage {
+    width: 100%;
+}
+
+.recommendation-percentage h2 {
+    font-size: 48px;
+    color: #4CAF50;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.recommendation-percentage p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.total-reviews {
+    font-size: 14px;
+    color: #888;
+}
+
+.reviews-section {
+    margin-top: 30px;
+}
+
+.reviews-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-item {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.review-header h4 {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    font-weight: 600;
+}
+
+.review-date {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    margin-top: 4px;
+}
+
+.review-comment {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+    .recommendation-percentage h2 {
+        font-size: 36px;
+    }
+    
+    .reviews-section {
+        margin-top: 20px;
+    }
+    
+    .review-item {
+        padding: 15px;
+    }
+} 
+
+.profile-card .book-appointment-btn {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 250px;
+}
+
+/* Add these styles for the login modal */
+.ant-modal-confirm-title {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.ant-modal-confirm-content {
+    font-size: 16px;
+    color: white;
+    margin-top: 8px;
+}
+
+.ant-modal-confirm-btns .ant-btn-primary {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.ant-modal-confirm-btns .ant-btn-primary:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
+/* Modal close icon styles */
+.ant-modal-close {
+    top: 17px;
+    right: 17px;
+}
+
+.ant-modal-close-x {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.ant-modal-close:hover {
+    color: #4CAF50;
+}
+
+/* Modal centering and styling */
+.ant-modal {
+    top: 50% !important;
+    transform: translateY(-50%);
+    padding-bottom: 0;
+}
+
+.ant-modal-confirm {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.ant-modal-confirm-body {
+    padding: 32px 32px 24px;
+}
+
+.ant-modal-confirm-title {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 16px !important;
+}
+
+.ant-modal-confirm-content {
+    font-size: 16px;
+    color:white;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.ant-modal-confirm-btns {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.ant-modal-confirm-btns .ant-btn-primary {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    height: 40px;
+    padding: 0 30px;
+    font-size: 16px;
+}
+
+.ant-modal-confirm-btns .ant-btn-primary:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
+
+
+/* Add responsive handling */
+@media (max-width: 500px) {
+    .profile-card {
+        max-width: 100%;
+    }
+    
+    .doctor-image-container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+}
+
+/* Add these new styles for ant-card centering */
+.ant-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+}
+
+/* If needed, also center specific elements inside */
+.ant-card-meta {
+    width: 100%;
+    text-align: center;
+}
+
+.ant-card-meta-title, 
+.ant-card-meta-description {
+    text-align: center;
+}
+
+/* Keep the responsive styles */
+@media (max-width: 1200px) {
+    .ant-card-body {
+        padding: 16px;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 40px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* Left Column - Image and Quick Stats */
+.doctor-visual-info {
+    flex-shrink: 0;
+    width: 350px;
+}
+
+.doctor-image-container {
+    width: 350px;
+    height: 350px;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.doctor-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.quick-stats {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.recommendation-percentage {
+    margin-bottom: 20px;
+}
+
+.recommendation-percentage h2 {
+    font-size: 48px;
+    color: #4CAF50;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.recommendation-percentage p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* Right Column - Doctor Info */
+.doctor-main-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.doctor-header {
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 20px;
+}
