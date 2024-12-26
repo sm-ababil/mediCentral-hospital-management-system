@@ -1,0 +1,151 @@
+.admin-container {
+    padding: 2rem;
+    background: #b9ffc4;
+    min-height: calc(100vh - 64px);
+}
+
+/* Stats Section */
+.stats-section {
+    margin-bottom: 2rem;
+}
+
+.stats-section .ant-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Room Status Section */
+.room-status-section {
+    margin-bottom: 2rem;
+}
+
+.room-status-section h2 {
+    margin-bottom: 1rem;
+    color: #1890ff;
+    font-weight: 500;
+}
+
+.room-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room-card h3 {
+    color: #1890ff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.bed-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.room-card.general {
+    border-top: 4px solid #52c41a;
+}
+
+.room-card.private {
+    border-top: 4px solid #1890ff;
+}
+
+.room-card.icu {
+    border-top: 4px solid #f5222d;
+}
+
+/* Requests Section */
+.requests-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.requests-section h2 {
+    margin-bottom: 1.5rem;
+    color: #1890ff;
+    font-weight: 500;
+}
+
+.requests-table {
+    margin-top: 1rem;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.approve-btn {
+    background: #52c41a;
+    border-color: #52c41a;
+}
+
+.approve-btn:hover {
+    background: #389e0d;
+    border-color: #389e0d;
+}
+
+.reject-btn:hover {
+    background: #cf1322;
+    border-color: #cf1322;
+}
+
+/* Table Styling */
+.ant-table-thead > tr > th {
+    background: #f8f9fa;
+    font-weight: 500;
+}
+
+.ant-badge-status-text {
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 1rem;
+    }
+
+    .stats-section .ant-col {
+        margin-bottom: 1rem;
+    }
+
+    .room-status-section .ant-col {
+        margin-bottom: 1rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Card Hover Effects */
+.ant-card:hover {
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Additional Stats Styling */
+.ant-statistic-title {
+    font-size: 1rem;
+    color: #666;
+}
+
+.ant-statistic-content {
+    font-size: 1.5rem;
+}
+
+/* Badge Styling */
+.ant-badge-status-dot {
+    width: 8px;
+    height: 8px;
+}
+
+.ant-badge-status-text {
+    margin-left: 8px;
+}
