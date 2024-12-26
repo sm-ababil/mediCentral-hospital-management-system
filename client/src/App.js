@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -10,12 +9,10 @@ import { useSelector } from 'react-redux';
 import Spinner from './components/Spinner';
 import ProtectedRoute from './components/ProtectedRoute';
 import PublicRoute from './components/PublicRoute';
+import UserProfile from './pages/UserProfile';
 import DoctorProfile from './pages/DoctorProfile';
-import ScheduleAppointment from './pages/ScheduleAppointment';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { setUser } from './redux/features/userSlice';
-import axios from 'axios';
+import OtBed from './pages/OtBed';
+import AdminBed from './pages/adminbed';
 
 function App() {
   const {loading} = useSelector(state => state.alerts);
@@ -57,15 +54,10 @@ function App() {
           <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path='/departments' element={<Departments />} />
           <Route path='/find-doctor' element={<FindDoctor />} />
+          <Route path='/user-profile' element={<UserProfile />} />
           <Route path="/doctor-profile/:id" element={<DoctorProfile />} />
-          <Route 
-            path="/schedule-appointment/:id" 
-            element={
-                <ProtectedRoute>
-                    <ScheduleAppointment />
-                </ProtectedRoute>
-            } 
-          />
+          <Route path='/ot-bed' element={<OtBed />} />
+          <Route path='/admin-bed' element={<AdminBed />} />
         </Routes>)
         }
       </BrowserRouter>

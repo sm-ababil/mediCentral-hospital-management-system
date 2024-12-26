@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
 
 .header {
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
   padding: 0 50px;
   height: 64px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
@@ -22,7 +22,7 @@
   font-weight: bold;
   color: white;
   text-decoration: none;
-  font-family: 'Hammersmith One', sans-serif;
+  font-family: "Hammersmith One", sans-serif;
   letter-spacing: 1px;
 }
 
@@ -55,7 +55,7 @@
   height: 36px;
   padding: 0 20px;
   border-radius: 18px;
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .nav-links button:hover {
@@ -77,4 +77,36 @@
 
 .nav-links a:hover {
   color: #00ff00;
-} 
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+
+.last-name {
+  color: #02892a !important; 
+  text-align: center;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.logout-button {
+  background-color: #ff4d4f;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 8px 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #b71c1c !important; /* Deeper red */
+  color: white !important;
+}

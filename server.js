@@ -17,6 +17,7 @@ const app = express();
 //middlewares
 app.use(express.json());
 app.use(morgan('dev'));
+app.use('/uploads', express.static('uploads'));
 
 
 //routes
