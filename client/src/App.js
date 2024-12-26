@@ -16,33 +16,6 @@ import AdminBed from './pages/adminbed';
 
 function App() {
   const {loading} = useSelector(state => state.alerts);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      // Get user data from API or token and set it in Redux
-      const getUserData = async () => {
-        try {
-          const response = await axios.post('/api/user/getUserData', 
-            {}, 
-            {
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
-            }
-          );
-          if (response.data.success) {
-            dispatch(setUser(response.data.data));
-          }
-        } catch (error) {
-          console.log(error);
-        }
-      };
-      getUserData();
-    }
-  }, [dispatch]);
-
   return (
     <>
       <BrowserRouter>
