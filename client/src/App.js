@@ -14,9 +14,8 @@ import DoctorProfile from './pages/DoctorProfile';
 import OtBed from './pages/OtBed';
 import AdminBed from './pages/adminbed';
 
-
 function App() {
-  const {loading} = useSelector(state => state.alert);
+  const {loading} = useSelector(state => state.alerts);
   return (
     <>
       <BrowserRouter>
