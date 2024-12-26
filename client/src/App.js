@@ -15,6 +15,7 @@ import OtBed from './pages/OtBed';
 import AdminBed from './pages/adminbed';
 import DoctorLogin from './pages/DoctorLogin';
 import DoctorRegister from './pages/DoctorRegister';
+import AdminRoute from './components/AdminRoute';
 
 function App() {
   const {loading} = useSelector(state => state.alerts);
@@ -26,7 +27,7 @@ function App() {
           <Route path='/' element={<PublicRoute><HomePage /></PublicRoute>} />
           <Route path='/login' element={<PublicRoute><Login /></PublicRoute>} />
           <Route path='/register' element={<PublicRoute><Register /></PublicRoute>} />
-          <Route path='/doctor-register' element={<PublicRoute><DoctorRegister /></PublicRoute>} />
+          <Route path='/doctor-register' element={<AdminRoute><DoctorRegister /></AdminRoute>} />
           <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path='/departments' element={<Departments />} />
           <Route path='/find-doctor' element={<FindDoctor />} />

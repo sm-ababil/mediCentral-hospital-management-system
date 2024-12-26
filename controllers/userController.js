@@ -53,6 +53,14 @@ const getAvatarController = async (req, res) => {
 
 const registerController = async (req, res) => {
   try {
+    const emailDomain = req.body.email.split('@')[1];
+    if (emailDomain == 'medicentral.com') {
+      return res.status(200).send({
+        success: false,
+        message: "Invalid Email",
+      });
+    }
+
     const existingUser = await userModel.findOne({ email: req.body.email });
     if (existingUser) {
       return res.status(200).send({
@@ -115,8 +123,8 @@ const docregisterController = async (req, res) => {
     await newDoctor.save();
     const avatarUrl =
       newDoctor.gender === "male"
-        ? `http://localhost:3000/uploads/1734481486687.jpg`
-        : `http://localhost:3000/uploads/1734482760992.jpg`;
+        ? `http://localhost:3000/uploads/1735245937844.jpg`
+        : `http://localhost:3000/uploads/1735245810572.jpg`;
     await docavatarModel.create({
       userId: newDoctor._id,
       avatarUrl,
