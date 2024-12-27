@@ -21,7 +21,7 @@ const DoctorLogin = () => {
         message.success(response.data.message);
         localStorage.setItem("token", response.data.token);
         dispatch(setUser(response.data.data));
-        navigate("/dashboard");
+        navigate("/doctor-dashboard");
       } else {
         message.error(response.data.message);
       }

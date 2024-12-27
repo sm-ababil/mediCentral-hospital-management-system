@@ -22,7 +22,11 @@ const Login = () => {
         message.success(response.data.message);
         localStorage.setItem("token", response.data.token);
         dispatch(setUser(response.data.data));
-        navigate('/dashboard');
+        if (response.data.data.email === "admin@admin.com") {
+          navigate('/admin-dashboard');
+        } else {
+          navigate('/dashboard');
+        }
       } else {
         message.error(response.data.message);
       }
