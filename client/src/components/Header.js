@@ -87,8 +87,17 @@ const Header = () => {
       </div>
       <div className="nav-links">
         <Link
-          to="/dashboard"
-          className={location.pathname === "/dashboard" ? "active-link" : ""}
+          to={userData?.email === "admin@admin.com" ? "/admin-dashboard" 
+          :userData?.email?.endsWith("@medicentral.com")? "/doctor-dashboard"
+          : "/dashboard"
+          }
+          className={
+            location.pathname === "/dashboard" || 
+            location.pathname === "/admin-dashboard" || 
+            location.pathname === "/doctor-dashboard" 
+              ? "active-link" 
+              : ""
+          }
         >
           Dashboard
         </Link>
