@@ -3,9 +3,27 @@ const colors = require('colors');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
+const cors = require('cors');
+
+
+app.use(cors());
+
 
 //dotenv config
 dotenv.config()
+
+app.use(express.static(path.join(__dirname, 'client', 'build')));
+
+
+app.get('/api/example', (req, res) => {
+    res.json({ message: 'Hello from the backend!' });
+  });
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
+
+
 
 //mongodb connection
 connectDB();
