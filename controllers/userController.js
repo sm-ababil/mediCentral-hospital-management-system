@@ -246,6 +246,7 @@ const authUserController = async (req, res) => {
   }
 };
 
+
 module.exports = {
   loginController,
   docloginController,
@@ -253,5 +254,5 @@ module.exports = {
   docregisterController,
   authUserController,
   uploadAvatarController,
-  getAvatarController,
+  getAvatarController
 };

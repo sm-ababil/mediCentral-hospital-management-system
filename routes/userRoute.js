@@ -6,7 +6,7 @@ const {
     docregisterController, 
     authUserController,
     uploadAvatarController,
-    getAvatarController
+    getAvatarController,
 } = require('../controllers/userController');
 const authentication = require('../middlewares/authentication');
 const multer = require('multer');

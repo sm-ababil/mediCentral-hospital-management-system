@@ -10,7 +10,6 @@ import Spinner from './components/Spinner';
 import ProtectedRoute from './components/ProtectedRoute';
 import PublicRoute from './components/PublicRoute';
 import UserProfile from './pages/UserProfile';
-import DoctorProfile from './pages/DoctorProfile';
 import OtBed from './pages/OtBed';
 import AdminBed from './pages/adminbed';
 import DoctorLogin from './pages/DoctorLogin';
@@ -19,6 +18,7 @@ import DoctorRoute from './components/DoctorRoute';
 import AdminRoute from './components/AdminRoute';
 import AdminDashboard from './pages/AdminDashboard';
 import DoctorDashboard from './pages/DoctorDashboard';
+import DoctorProfile from './pages/DoctorProfile';
 
 
 function App() {
@@ -38,10 +38,11 @@ function App() {
           <Route path='/departments' element={<Departments />} />
           <Route path='/find-doctor' element={<FindDoctor />} />
           <Route path='/user-profile' element={<UserProfile />} />
-          <Route path="/doctor-profile/:id" element={<DoctorProfile />} />
           <Route path='/ot-bed' element={<OtBed />} />
           <Route path='/admin-bed' element={<AdminBed />} />
           <Route path='/login-doctor' element={<PublicRoute><DoctorLogin /></PublicRoute>} />
+          <Route path="/doctor-profile/:id" element={<DoctorProfile />} />
+
         </Routes>)
         }
       </BrowserRouter>
