@@ -15,11 +15,12 @@ import AdminBed from './pages/adminbed';
 import DoctorLogin from './pages/DoctorLogin';
 import DoctorRegister from './pages/DoctorRegister';
 import DoctorRoute from './components/DoctorRoute';
-import AdminRoute from './components/AdminRoute';
+import AdminRoute from './components/AdminRoute';``
 import AdminDashboard from './pages/AdminDashboard';
 import DoctorDashboard from './pages/DoctorDashboard';
 import DoctorProfile from './pages/DoctorProfile';
-
+import OtRequest from './pages/OtRequest';
+import AppointmentRequest from './pages/AppointmentRequest';
 
 function App() {
   const {loading} = useSelector(state => state.alerts);
@@ -42,7 +43,8 @@ function App() {
           <Route path='/admin-bed' element={<AdminBed />} />
           <Route path='/login-doctor' element={<PublicRoute><DoctorLogin /></PublicRoute>} />
           <Route path="/doctor-profile/:id" element={<DoctorProfile />} />
-
+          <Route path="/ot-requests" element={<OtRequest />} />
+          <Route path="/appointment-requests" element={<AppointmentRequest />} />
         </Routes>)
         }
       </BrowserRouter>

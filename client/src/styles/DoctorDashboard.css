@@ -1,0 +1,50 @@
+/* General layout styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Roboto", sans-serif; /* Updated font */
+}
+
+.top-bar {
+  position: fixed;
+  top: 80px; /* Increased distance from the header */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+  z-index: 1000;
+}
+
+.top-bar a {
+  background-color: #1abc9c; /* New teal color */
+  color: #ffffff;
+  text-decoration: none;
+  padding: 25px 30px; /* Increased padding for larger size */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  font-size: 20px; /* Increased font size for better visibility */
+  font-family: "Poppins", sans-serif; /* More stylish font */
+  font-weight: 700; /* Increased font weight for better visibility */
+  transition: background-color 0.3s, transform 0.3s;
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  width: 250px; /* Increased width for more text space */
+  height: 80px; /* Larger height for more presence */
+}
+
+.top-bar a:hover {
+  background-color: #16a085; /* Slightly darker shade for hover */
+  transform: translateY(-3px);
+}
+
+/* Content styles */
+.content {
+  margin-top: 160px; /* Adjust for header and top bar height */
+  padding: 20px;
+  background-color: #ecf0f1;
+  min-height: calc(100vh - 160px); /* Adjust for header and top bar height */
+}
