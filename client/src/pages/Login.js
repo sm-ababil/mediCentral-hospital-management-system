@@ -22,7 +22,11 @@ const Login = () => {
         message.success(response.data.message);
         localStorage.setItem("token", response.data.token);
         dispatch(setUser(response.data.data));
-        navigate('/dashboard');
+        if (response.data.data.email === "admin@admin.com") {
+          navigate('/admin-dashboard');
+        } else {
+          navigate('/dashboard');
+        }
       } else {
         message.error(response.data.message);
       }
@@ -36,50 +40,54 @@ const Login = () => {
   return (
     <>
       <Header />
-      <h2>User Log in</h2>
       <div className="form-container">
-        <Form
-          name="login"
-          onFinish={onFinish}
-          layout="vertical"
-        >
-          <Form.Item
-            name="email"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your email!',
-              },
-              {
-                type: 'email',
-                message: 'Please enter a valid email!',
-              },
-            ]}
+        <div className="form-wrapper">
+          <h2 className="page-title">User Login</h2>
+          <Form
+            name="login"
+            onFinish={onFinish}
+            layout="vertical"
+            className="login-form"
           >
-            <Input placeholder="Email" />
-          </Form.Item>
+            <Form.Item
+              name="email"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your email!',
+                },
+                {
+                  type: 'email',
+                  message: 'Please enter a valid email!',
+                },
+              ]}
+            >
+              <Input placeholder="Email" />
+            </Form.Item>
 
-          <Form.Item
-            name="password"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your password!',
-              },
-            ]}
-          >
-            <Input.Password placeholder="Password" />
-          </Form.Item>
+            <Form.Item
+              name="password"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your password!',
+                },
+              ]}
+            >
+              <Input.Password placeholder="Password" />
+            </Form.Item>
 
-          <Form.Item>
-            <Button type="primary" htmlType="submit">
-              Log in
-            </Button>
-            <div style={{ textAlign: "center", marginTop: "10px" }}>
-              Not a member? <Link to="/register">Register</Link>
-            </div>
-          </Form.Item>
-        </Form>
+            <Form.Item>
+              <Button type="primary" htmlType="submit" className="login-button">
+                Log in
+              </Button>
+              <div className="form-links">
+                <p>Not a member? <Link to="/register">Register</Link></p>
+                <p><Link to="/login-doctor">Login as Doctor</Link></p>
+              </div>
+            </Form.Item>
+          </Form>
+        </div>
       </div>
     </>
   );

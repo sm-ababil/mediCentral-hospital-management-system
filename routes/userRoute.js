@@ -1,10 +1,12 @@
 const express = require('express');
 const {
-    loginController, 
-    registerController, 
+    loginController,
+    docloginController,
+    registerController,
+    docregisterController, 
     authUserController,
     uploadAvatarController,
-    getAvatarController
+    getAvatarController,
 } = require('../controllers/userController');
 const authentication = require('../middlewares/authentication');
 const multer = require('multer');
@@ -22,8 +24,13 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.post('/login', loginController);
+router.post('/doclogin', docloginController);
 router.post('/register', registerController);
+router.post('/docregister', docregisterController);
 router.post('/getUser', authentication, authUserController);
 router.post('/uploadAvatar', upload.single('avatar'), uploadAvatarController);
 router.post('/getAvatar/:userId', getAvatarController);
+
+
+
 module.exports = router;
